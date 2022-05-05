@@ -30,20 +30,20 @@ if (!empty($messages)) {
 
 	  <label>
 		Имя:<br />
-		<input <?php if (errors['name']){print('class="error"');}?> type="text" value=<?php print($values['name']);?> name="name"
+		<input <?php if ($errors['name']){print('class="error"');}?> type="text" value=<?php print($values['name']);?> name="name"
 		  />
 	  </label><br />
 
 	  <label>
 		Еmail:<br />
-		<input <?php if (errors['email']){print('class="error"');}?> value=<?php print($values['email']);?> name="email"
+		<input <?php if ($errors['email']){print('class="error"');}?> value=<?php print($values['email']);?> name="email"
 		  placeholder="test@example.com"
 		  type="email" />
 	  </label><br />
 
 	  <label>
 		Год рождения:<br />
-		<select <?php if (errors['year']){print('class="error"');}?> name="year">
+		<select <?php if ($errors['year']){print('class="error"');}?> name="year">
 	  <option value="Выбрать">Выбрать</option>
 	<?php
 		for($i=1900;$i<=2022;$i++){
@@ -54,7 +54,7 @@ if (!empty($messages)) {
 	</select> <br>
 	  </label><br />
 	  
-	  Пол:<br /> <div <?php if (errors['pol']){print('class="error"');}?>>
+	  Пол:<br /> <div <?php if ($errors['pol']){print('class="error"');}?>>
 	  <label><input <?php if ($values['pol']=='M'){print('checked');}?> type="radio" 
 		name="pol" value="M" />
 		Мужской</label>
@@ -82,7 +82,7 @@ if (!empty($messages)) {
 	  <label>
 		Сверхспособности:
 		<br /> 
-		<select <?php if (errors['super']){print('class="error"');}?> name="super[]"
+		<select <?php if ($errors['super']){print('class="error"');}?> name="super[]"
 		  multiple="multiple">
 		  <option <?php if ($values['immortal']){print('selected');}?> value="immortal">Бессмертие</option>
 		  <option <?php if ($values['megabrain']){print('selected');}?> value="megabrain" >Мегамозг</option>
@@ -96,7 +96,7 @@ if (!empty($messages)) {
 	  </label><br />
 
 	  Чекбокс:<br />
-	  <label><input <?php if (errors['checkbox']){print('class="error"');}?> type="checkbox" <?php if($values['checkbox']) print('checked');?> name="checkbox"/>
+	  <label><input <?php if ($errors['checkbox']){print('class="error"');}?> type="checkbox" <?php if($values['checkbox']) print('checked');?> name="checkbox"/>
 		Я Не болею за Red Bull Racing</label><br />
 
 	  Если уверенны в своем ответе нажимайте:
