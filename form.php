@@ -30,13 +30,13 @@ if (!empty($messages)) {
 
 	  <label>
 		Имя:<br />
-		<input <?php if ($errors['name']){print('class="error"');}?> type="text" value=<?php print($values['name']);?> name="name"
+		<input <?php if ($errors['name']){print('class="error"');}?> type="text" value="<?php print($values['name']);?>" name="name"
 		  />
 	  </label><br />
 
 	  <label>
 		Еmail:<br />
-		<input <?php if ($errors['email']){print('class="error"');}?> value=<?php print($values['email']);?> name="email"
+		<input <?php if ($errors['email']){print('class="error"');}?> value="<?php print($values['email']);?>" name="email"
 		  placeholder="test@example.com"
 		  type="email" />
 	  </label><br />
@@ -62,7 +62,7 @@ if (!empty($messages)) {
 		name="pol" value="W" />
 		Женский</label><br />
 		</div>
-	  Количество конечностей:<br /> <div <?php if (errors['limb']){print('class="error"');}?>>
+	  Количество конечностей:<br /> <div <?php if ($errors['limb']){print('class="error"');}?>>
 	  <label><input <?php if ($values['limb']==0){print('checked');}?> type="radio"
 		name="limb" value="0" />
 		0</label>
@@ -92,7 +92,7 @@ if (!empty($messages)) {
 	  
 	  <label>
 		Биография:<br />
-		<textarea name="bio">$value['bio']</textarea>
+		<textarea name="bio"><?php $values['bio']?></textarea>
 	  </label><br />
 
 	  Чекбокс:<br />
